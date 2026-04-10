@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  repo: luxoombd-hub/luxoombd
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "products"
+    label: "Product (পণ্য যোগ করুন)"
+    folder: "content/products"
+    create: true
+    slug: "{{title}}"
+    fields:
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "Price", name: "price", widget: "number" }
+      - { label: "Discount Price", name: "discount_price", widget: "number", required: false }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "body", widget: "markdown" }
