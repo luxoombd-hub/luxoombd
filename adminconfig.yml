@@ -35,3 +35,7 @@ collections:
           - { label: "WhatsApp Number", name: "wa_number", widget: "string" }
           - { label: "Main Video Background", name: "hero_video", widget: "string" }
           - { label: "Show Offer Banner?", name: "show_banner", widget: "boolean", default: true }
+
+          backend:
+  name: git-gateway
+  branch: main # আপনার গিটহাবের ব্রাঞ্চ যদি 'main' হয়
