@@ -1,224 +1,24 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html>
 <head>
-
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    
-
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxzum BD | Luxury Eyewear</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Hind Siliguri', sans-serif; background-color: #050505; color: #f4f4f4; scroll-behavior: smooth; }
-        .gold-text { color: #D4AF37; }
-        .gold-bg { background-color: #D4AF37; }
-        .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(212, 175, 55, 0.2); backdrop-filter: blur(10px); }
-        input, select, textarea { background: #111 !important; border: 1px solid #333 !important; color: white !important; padding: 12px; border-radius: 8px; width: 100%; outline: none; }
-        input:focus { border-color: #D4AF37 !important; }
-        .hidden { display: none; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxoom BD - Admin Panel</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-    <header class="fixed top-0 w-full z-50 bg-black/90 border-b border-zinc-800">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold gold-text tracking-widest">LUXZUM BD</h1>
-            <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
-                <a href="#all-products" class="hover:gold-text transition">All Products</a>
-                <a href="#contact" class="hover:gold-text transition">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <video autoplay loop muted playsinline class="absolute z-0 min-w-full min-h-full object-cover opacity-40">
-            <source src="https://i.imgur.com/example-video.mp4" type="video/mp4">
-        </video>
-        <div class="relative z-10 text-center px-4">
-            <h2 class="text-5xl md:text-8xl font-bold mb-4 uppercase tracking-tighter">Luxury Vision</h2>
-            <p class="text-xl md:text-3xl gold-text font-light mb-8">লাক্সারিয়াস ফ্রেম এবং প্রিমিয়াম লেন্স কালেকশন</p>
-            <a href="#order-section" class="gold-bg text-black px-12 py-4 rounded-full font-bold text-lg hover:scale-105 transition duration-300">অর্ডার করুন</a>
-        </div>
-    </section>
-
-    <section id="all-products" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-            <div class="space-y-4">
-                <img id="mainImage" src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800" class="rounded-2xl border border-zinc-800 w-full" alt="Product">
-                <div class="flex gap-4">
-                    <button onclick="changeColor('Gold', 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=800')" class="border border-gold text-xs p-2 rounded">Gold View</button>
-                    <button onclick="changeColor('Silver', 'https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=800')" class="border border-zinc-700 text-xs p-2 rounded">Silver View</button>
-                </div>
-            </div>
-
-            <div class="space-y-6">
-                <h2 class="text-4xl font-bold gold-text">প্রিমিয়াম রিমলেস ফটোক্রোমিক চশমা</h2>
-                <div class="flex items-center gap-4">
-                    <span class="text-4xl font-bold">৳ ১৮৫০</span>
-                    <span class="text-xl line-through text-zinc-600">৳ ২৫০০</span>
-                    <span class="bg-red-600 text-white text-xs px-2 py-1 rounded">২৬% ছাড়</span>
-                </div>
-                <div class="prose prose-invert">
-                    <ul class="list-disc pl-5 space-y-2 text-zinc-400">
-                        <li>সূর্যের আলোতে অটোমেটিক কালো হবে (Photochromic)</li>
-                        <li>ব্লু-কাট প্রোটেকশন যুক্ত</li>
-                        <li>বিলাসবহুল রিমলেস মেটাল ডিজাইন</li>
-                        <li>১ বছরের রিপ্লেসমেন্ট ওয়ারেন্টি</li>
-                    </ul>
-                </div>
-                <a href="#order-section" class="block text-center border-2 border-gold-500 py-4 rounded-xl font-bold hover:bg-zinc-900 transition">আরো বিস্তারিত দেখুন</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="order-section" class="py-24 bg-zinc-950 px-6">
-        <div class="max-w-4xl mx-auto glass-card p-10 rounded-3xl">
-            <h2 class="text-3xl font-bold text-center mb-10 gold-text uppercase tracking-widest">অর্ডার কনফার্ম করুন</h2>
-            
-            <form id="luxzumOrderForm" class="grid md:grid-cols-2 gap-8">
-                <div class="space-y-6">
-                    <div>
-                        <label class="block mb-2 text-sm text-zinc-500">আপনার নাম</label>
-                        <input type="text" id="name" placeholder="উদা: আব্দুল্লাহ" required>
-                    </div>
-                    <div>
-                        <label class="block mb-2 text-sm text-zinc-500">মোবাইল নম্বর</label>
-                        <input type="tel" id="phone" placeholder="০১৭XXXXXXXX" required>
-                    </div>
-                    <div>
-                        <label class="block mb-2 text-sm text-zinc-500">জেলা সিলেক্ট করুন</label>
-                        <select id="districts" required onchange="populateThanas()">
-                            <option value="">জেলা নির্বাচন করুন</option>
-                            <option value="Dhaka">ঢাকা</option>
-                            <option value="Chittagong">চট্টগ্রাম</option>
-                            <option value="Rajshahi">রাজশাহী</option>
-                            <option value="Sylhet">সিলেট</option>
-                            </select>
-                    </div>
-                    <div>
-                        <label class="block mb-2 text-sm text-zinc-500">থানা সিলেক্ট করুন</label>
-                        <select id="thanas" required>
-                            <option value="">আগে জেলা সিলেক্ট করুন</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block mb-2 text-sm text-zinc-500">ফুল অ্যাড্রেস (কোথা থেকে রিসিভ করবেন)</label>
-                        <textarea id="fullAddress" rows="2" placeholder="উদা: হাউজ নং-১০, রোড নং-০৫..." required></textarea>
-                    </div>
-                </div>
-
-                <div class="space-y-6">
-                    <div class="bg-zinc-900/50 p-6 rounded-2xl border border-zinc-800">
-                        <p class="mb-4 font-bold gold-text">পাওয়ার অপশন সিলেক্ট করুন:</p>
-                        <div class="flex flex-col gap-3">
-                            <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="radio" name="powerType" value="Power Chara" checked onclick="toggleFile(false)" class="w-5 h-5">
-                                <span>পাওয়ার ছাড়া (Plain Lens)</span>
-                            </label>
-                            <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="radio" name="powerType" value="Power Soho" onclick="toggleFile(true)" class="w-5 h-5">
-                                <span>পাওয়ার সহ (Prescription)</span>
-                            </label>
-                        </div>
-
-                        <div id="fileUpload" class="mt-6 hidden animate-pulse">
-                            <label class="block mb-2 text-xs text-gold-500 font-bold">প্রেসক্রিপশন আপলোড করুন (ছবি)</label>
-                            <input type="file" id="prescription" class="text-xs">
-                        </div>
-                    </div>
-
-                    <div class="bg-zinc-900/50 p-6 rounded-2xl border border-zinc-800">
-                        <p class="mb-4 font-bold gold-text">কালার পছন্দ করুন:</p>
-                        <div class="flex gap-4">
-                            <label class="text-center">
-                                <input type="radio" name="color" value="Golden" checked class="hidden peer">
-                                <div class="w-12 h-12 rounded-full bg-[#D4AF37] border-4 border-transparent peer-checked:border-white cursor-pointer"></div>
-                                <span class="text-xs">Gold</span>
-                            </label>
-                            <label class="text-center">
-                                <input type="radio" name="color" value="Silver" class="hidden peer">
-                                <div class="w-12 h-12 rounded-full bg-zinc-400 border-4 border-transparent peer-checked:border-white cursor-pointer"></div>
-                                <span class="text-xs">Silver</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="w-full gold-bg text-black font-extrabold py-5 rounded-2xl text-2xl shadow-2xl hover:brightness-110 transition">অর্ডার কনফার্ম করুন</button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <footer id="contact" class="py-12 border-t border-zinc-900 text-center text-zinc-600 text-sm">
-        <p>© 2026 LUXZUM BD | All Rights Reserved</p>
-        <p class="mt-2">Developed for Premium Eyewear Experience</p>
-    </footer>
-
-    <script>
-        // জেলা ও থানা ডাটা
-        const districtData = {
-            "Dhaka": ["মিরপুর", "উত্তরা", "ধানমন্ডি", "গুলশান", "মোহাম্মদপুর", "সাভার"],
-            "Chittagong": ["পাঁচলাইশ", "হালিশহর", "কোতোয়ালি", "পতেঙ্গা"],
-            "Rajshahi": ["বোয়ালিয়া", "মতিহার", "রাজপাড়া"],
-            "Sylhet": ["জিন্দাবাজার", "গোলাপগঞ্জ", "বিয়ানীবাজার"]
-        };
-
-        function populateThanas() {
-            const dist = document.getElementById('districts').value;
-            const thanaSelect = document.getElementById('thanas');
-            thanaSelect.innerHTML = '<option value="">থানা নির্বাচন করুন</option>';
-            if(districtData[dist]) {
-                districtData[dist].forEach(thana => {
-                    const opt = document.createElement('option');
-                    opt.value = thana;
-                    opt.innerHTML = thana;
-                    thanaSelect.appendChild(opt);
-                });
-            }
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
         }
-
-        function toggleFile(show) {
-            document.getElementById('fileUpload').classList.toggle('hidden', !show);
-        }
-
-        function changeColor(color, imgUrl) {
-            document.getElementById('mainImage').src = imgUrl;
-        }
-
-        // হোয়াটসঅ্যাপ অর্ডার হ্যান্ডেলার
-        document.getElementById('luxzumOrderForm').onsubmit = function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const district = document.getElementById('districts').value;
-            const thana = document.getElementById('thanas').value;
-            const address = document.getElementById('fullAddress').value;
-            const power = document.querySelector('input[name="powerType"]:checked').value;
-            const color = document.querySelector('input[name="color"]:checked').value;
-
-            const whatsappText = `*নতুন অর্ডার - Luxzum BD*%0A` +
-                                 `----------------------------%0A` +
-                                 `👤 কাস্টমার: ${name}%0A` +
-                                 `📞 ফোন: ${phone}%0A` +
-                                 `📍 জেলা: ${district}%0A` +
-                                 `🏙️ থানা: ${thana}%0A` +
-                                 `🏠 ঠিকানা: ${address}%0A` +
-                                 `----------------------------%0A` +
-                                 `🕶️ পণ্য: প্রিমিয়াম রিমলেস চশমা%0A` +
-                                 `🎨 কালার: ${color}%0A` +
-                                 `⚙️ পাওয়ার: ${power}%0A` +
-                                 `----------------------------%0A` +
-                                 `(দ্রুত ডেলিভারির জন্য কল করুন)`;
-
-            // আপনার হোয়াটসঅ্যাপ নম্বরটি এখানে দিন (যেমন: 8801700000000)
-            const myNumber = "8801XXXXXXXXX"; 
-            window.open(`https://wa.me/${myNumber}?text=${whatsappText}`, '_blank');
-        };
-    </script>
-
+      });
+    }
+  </script>
 </body>
 </html>
